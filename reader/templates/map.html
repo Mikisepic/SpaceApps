@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d1c5e900f9754b1a9019a634cd04dea1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_d1c5e900f9754b1a9019a634cd04dea1" ></div>
+        
+</body>
+<script>    
+    
+            var map_d1c5e900f9754b1a9019a634cd04dea1 = L.map(
+                "map_d1c5e900f9754b1a9019a634cd04dea1",
+                {
+                    center: [40.738, -73.98],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b3bb2c632f0540bdae43780b4af8b6d9 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+            var circle_c8d2c39f9e4844e496c1aba214863cbb = L.circle(
+                [32.5364, -93.749],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_8dc780b738d74b3aaea050821b9bc451 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7e97f0ba88fc4dedb97c03b70477fc78 = $(`<div id="html_7e97f0ba88fc4dedb97c03b70477fc78" style="width: 100.0%; height: 100.0%;">Shreveport<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_8dc780b738d74b3aaea050821b9bc451.setContent(html_7e97f0ba88fc4dedb97c03b70477fc78);
+        
+
+        circle_c8d2c39f9e4844e496c1aba214863cbb.bindPopup(popup_8dc780b738d74b3aaea050821b9bc451)
+        ;
+
+        
+    
+    
+            var circle_4e4f7ec3c2dc4be588368fe958311da8 = L.circle(
+                [38.919, -77.013],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 58000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_818546b638d44db1a0fd92e63c682782 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d7e71d23a9cc48f2adaa032ae4cbbc85 = $(`<div id="html_d7e71d23a9cc48f2adaa032ae4cbbc85" style="width: 100.0%; height: 100.0%;">Metropolitan Washington<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_818546b638d44db1a0fd92e63c682782.setContent(html_d7e71d23a9cc48f2adaa032ae4cbbc85);
+        
+
+        circle_4e4f7ec3c2dc4be588368fe958311da8.bindPopup(popup_818546b638d44db1a0fd92e63c682782)
+        ;
+
+        
+    
+    
+            var circle_3996a5b2fcc441d78bd7fbbc5f8553e6 = L.circle(
+                [41.7608, -87.8932],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 40000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_7e256e3c63dc44958d829b7a4a026ad7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fccb5e4dbc864797bf58bf6112eb9cb4 = $(`<div id="html_fccb5e4dbc864797bf58bf6112eb9cb4" style="width: 100.0%; height: 100.0%;">South West Suburbs (Chicago)<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_7e256e3c63dc44958d829b7a4a026ad7.setContent(html_fccb5e4dbc864797bf58bf6112eb9cb4);
+        
+
+        circle_3996a5b2fcc441d78bd7fbbc5f8553e6.bindPopup(popup_7e256e3c63dc44958d829b7a4a026ad7)
+        ;
+
+        
+    
+    
+            var circle_2317598774634cb1b88dc8902b606622 = L.circle(
+                [39.768, -104.873],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_49dcedfe118e45ef83733db448d25fb5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_80f1b4e130ab4b2c90ea853070c107e6 = $(`<div id="html_80f1b4e130ab4b2c90ea853070c107e6" style="width: 100.0%; height: 100.0%;">Denver/Boulder<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_49dcedfe118e45ef83733db448d25fb5.setContent(html_80f1b4e130ab4b2c90ea853070c107e6);
+        
+
+        circle_2317598774634cb1b88dc8902b606622.bindPopup(popup_49dcedfe118e45ef83733db448d25fb5)
+        ;
+
+        
+    
+    
+            var circle_28bb28772724493bbd9d1411741dc51e = L.circle(
+                [38.919, -77.013],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 76000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_d21af48c310c4cc5a5ea57f343b9916a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_14364ccd250540f189bfeb4c8c78f616 = $(`<div id="html_14364ccd250540f189bfeb4c8c78f616" style="width: 100.0%; height: 100.0%;">Metropolitan Washington<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_d21af48c310c4cc5a5ea57f343b9916a.setContent(html_14364ccd250540f189bfeb4c8c78f616);
+        
+
+        circle_28bb28772724493bbd9d1411741dc51e.bindPopup(popup_d21af48c310c4cc5a5ea57f343b9916a)
+        ;
+
+        
+    
+    
+            var circle_41331ccab70a453eadcfc5f861e58b61 = L.circle(
+                [38.919, -77.013],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 76000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_d60106f2b8f442aea5179328dd376728 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d6e19dc81e2847abb49c3ec7b393c2c6 = $(`<div id="html_d6e19dc81e2847abb49c3ec7b393c2c6" style="width: 100.0%; height: 100.0%;">Metropolitan Washington<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_d60106f2b8f442aea5179328dd376728.setContent(html_d6e19dc81e2847abb49c3ec7b393c2c6);
+        
+
+        circle_41331ccab70a453eadcfc5f861e58b61.bindPopup(popup_d60106f2b8f442aea5179328dd376728)
+        ;
+
+        
+    
+    
+            var circle_93718faa89ff4ffd8a285bbad9296c8d = L.circle(
+                [38.919, -77.013],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 76000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_a1f620cf959c4ef0977cd1b3e644b294 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8dea61b404e946ab9ae858ef8d12af46 = $(`<div id="html_8dea61b404e946ab9ae858ef8d12af46" style="width: 100.0%; height: 100.0%;">Metropolitan Washington<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_a1f620cf959c4ef0977cd1b3e644b294.setContent(html_8dea61b404e946ab9ae858ef8d12af46);
+        
+
+        circle_93718faa89ff4ffd8a285bbad9296c8d.bindPopup(popup_a1f620cf959c4ef0977cd1b3e644b294)
+        ;
+
+        
+    
+    
+            var circle_0532de1f8e124a25bc04ae3139c27e94 = L.circle(
+                [38.919, -77.013],
+                {"bubblingMouseEvents": true, "color": "#34eb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34eb5e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 76000.0, "stroke": true, "weight": 3}
+            ).addTo(map_d1c5e900f9754b1a9019a634cd04dea1);
+        
+    
+        var popup_ccee4e251a244983a10e2ca6c1151968 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_60aa666fd953424f915b62b9403b954e = $(`<div id="html_60aa666fd953424f915b62b9403b954e" style="width: 100.0%; height: 100.0%;">Metropolitan Washington<br> Air Quality: <b>Good</b></div>`)[0];
+            popup_ccee4e251a244983a10e2ca6c1151968.setContent(html_60aa666fd953424f915b62b9403b954e);
+        
+
+        circle_0532de1f8e124a25bc04ae3139c27e94.bindPopup(popup_ccee4e251a244983a10e2ca6c1151968)
+        ;
+
+        
+    
+</script>

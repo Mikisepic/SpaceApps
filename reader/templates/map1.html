@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0604254c0bd84d89a8ae52c5b31bb65a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_0604254c0bd84d89a8ae52c5b31bb65a" ></div>
+        
+</body>
+<script>    
+    
+            var map_0604254c0bd84d89a8ae52c5b31bb65a = L.map(
+                "map_0604254c0bd84d89a8ae52c5b31bb65a",
+                {
+                    center: [28.6448, 77.2167],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4e612b64a2294a6eaac21799256c51a2 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0604254c0bd84d89a8ae52c5b31bb65a);
+        
+    
+            var circle_3caad3ce3918462391f5ec6ae49092db = L.circle(
+                [28.651, 77.315],
+                {"bubblingMouseEvents": true, "color": "#8000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8000ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21000, "stroke": true, "weight": 3}
+            ).addTo(map_0604254c0bd84d89a8ae52c5b31bb65a);
+        
+    
+        var popup_56c9106d89744b71b2b6d8f35ced7b6d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a3dd2bf33a8547218ba24110d0a28236 = $(`<div id="html_a3dd2bf33a8547218ba24110d0a28236" style="width: 100.0%; height: 100.0%;">Air Quality: <br><b>Very Unhealthy</div>`)[0];
+            popup_56c9106d89744b71b2b6d8f35ced7b6d.setContent(html_a3dd2bf33a8547218ba24110d0a28236);
+        
+
+        circle_3caad3ce3918462391f5ec6ae49092db.bindPopup(popup_56c9106d89744b71b2b6d8f35ced7b6d)
+        ;
+
+        
+    
+    
+            var circle_d278d63492024450aa46d75fbdcef421 = L.circle(
+                [28.682, 77.305],
+                {"bubblingMouseEvents": true, "color": "#8000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8000ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21000, "stroke": true, "weight": 3}
+            ).addTo(map_0604254c0bd84d89a8ae52c5b31bb65a);
+        
+    
+        var popup_43f3644348d646d197fe7e953c117baa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ae2ea7a3c08e4f0f9d021fd04f14b99b = $(`<div id="html_ae2ea7a3c08e4f0f9d021fd04f14b99b" style="width: 100.0%; height: 100.0%;">Air Quality: <br><b>Very Unhealthy</div>`)[0];
+            popup_43f3644348d646d197fe7e953c117baa.setContent(html_ae2ea7a3c08e4f0f9d021fd04f14b99b);
+        
+
+        circle_d278d63492024450aa46d75fbdcef421.bindPopup(popup_43f3644348d646d197fe7e953c117baa)
+        ;
+
+        
+    
+</script>

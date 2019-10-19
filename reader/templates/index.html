@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Main</title>
+    <style>
+        div, input {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .col-7 {
+            display: flex;
+        }
+        .col-7 .text-left {
+            padding-left: 30%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="./../static/img/background.png" width="150" height="150" class="d-inline-block align-top" alt="">
+        </a>
+    </nav>
+    <div class="container text-center">
+        <p class="display-3">Air Quality Search</p>
+        <form action="/map" enctype="multipart/form-data" method="post">
+            <div class="row">
+                    <div class="col-5 form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" name="viewing" type="radio" value="json">Air Quality Forecast
+                            <input autocomplete="off" class="form-control" name="month" placeholder="Month"  type="number" min="1" max="12">
+                            <input autocomplete="off" class="form-control" name="day" placeholder="Day"  type="number" min="1" max="31">
+                        </label>
+                    </div>
+            
+                    <div class="col-7 form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" name="viewing" type="radio" value="csv">History
+                            <input autocomplete="off" class="form-control" name="year" placeholder="Year"  type="number" min="2000" max="2019">
+                            <input autocomplete="off" class="form-control" name="month1" placeholder="Month"  type="number" min="1" max="12">
+                            <input autocomplete="off" class="form-control" name="day1" placeholder="Day"  type="number" min="1" max="31">
+                        </label>
+                        <br>
+                        <label class="form-check-label text-left">
+                                <input class="form-check-input" name="region" type="radio" value="Los Angeles, USA"><p>Los Angeles</p>
+                                <input class="form-check-input" name="region" type="radio" value="AddisAbaba, Ethopia"><p>AddisAbaba</p> 
+                                <input class="form-check-input" name="region" type="radio" value="Dehli, India"><p>Dehli</p> 
+                        </label>
+                    </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Show Me</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
