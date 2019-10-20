@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import pandas as pd
 import folium
+import base64
+from folium import IFrame
 
 app = Flask(__name__)
 
@@ -80,14 +82,32 @@ def get_aod_data_by_time_and_region(selected_year, selected_month, selected_day,
     return aod_Data
 
 def plot_quality(aod_Data, selected_region1):
+    
     # generate a new map
     if selected_region1 == "Los Angeles, USA":
         folium_map = folium.Map(location=[34.0522, -118.2437], zoom_start=11, tiles="CartoDB dark_matter")
+        
+        encoded = base64.b64encode(open('los angeles graph.png', 'rb').read())
+        
+        html = '<img src="data:image/png;base64,{}">'.format
+        iframe = IFrame(html(encoded.decode('UTF-8')), width=370, height=270)
+        
     elif selected_region1 == "AddisAbaba, Ethopia":
         folium_map = folium.Map(location=[9.02497, 38.74689], zoom_start=11, tiles="CartoDB dark_matter")
+        
+        encoded = base64.b64encode(open('addisababa graph.png', 'rb').read())
+        
+        html = '<img src="data:image/png;base64,{}">'.format
+        iframe = IFrame(html(encoded.decode('UTF-8')), width=370, height=270)
+        
     elif selected_region1 == "Dehli, India":
         folium_map = folium.Map(location=[28.6448, 77.2167], zoom_start=11, tiles="CartoDB dark_matter")
+
+        encoded = base64.b64encode(open('dehli graph.png', 'rb').read())
         
+        html = '<img src="data:image/png;base64,{}">'.format
+        iframe = IFrame(html(encoded.decode('UTF-8')), width=370, height=270)
+
     # for each row in the data, add a cicle marker
     for index, row in aod_Data.iterrows():
         # calculate net departures
@@ -98,31 +118,30 @@ def plot_quality(aod_Data, selected_region1):
         
         # choose the color of the marker
         if aod_index>0 and aod_index<=0.5:
-            popup_text = "Air Quality Index: <b>{}</b> <br><b>Good"
+            popup_text = "Air Quality: <br><b>Good"
             color="#007849" # green
         elif aod_index>0.5 and aod_index<=1: 
-            popup_text = "Air Quality Index: <b>{}</b> <br><b>Moderate"
+            popup_text = "Air Quality: <br><b>Moderate"
             color="#ffff00" # yellow
         elif aod_index>1 and aod_index<=1.5:
-            popup_text = "Air Quality Index: <b>{}</b> <br><b>Unhealthy for Sensitive Groups"
+            popup_text = "Air Quality: <br><b>Unhealthy for Sensitive Groups"
             color="#ff8000" # orange
         elif aod_index>1.5 and aod_index<=2:
-            popup_text = "Air Quality Index: <b>{}</b> <br><b>Unhealthy"
+            popup_text = "Air Quality: <br><b>Unhealthy"
             color="#ff0000" # red
         elif aod_index>2 and aod_index<=3:
-            popup_text = "Air Quality Index: <b>{}</b> <br><b>Very Unhealthy"
+            popup_text = "Air Quality: <br><b>Very Unhealthy"
             color="#8000ff" # purple
         elif aod_index>3 and aod_index<=5:
-            popup_text = "Air Quality Index: <b>{}</b> <br><b>Hazardous"
+            popup_text = "Air Quality: <br><b>Hazardous"
             color="#800000" # maroon
         
         # add marker to the map
-        popup_text = popup_text.format(aod_index)
         folium.Circle(location=(row["Longitude"],
                             row["Latitude"]),
                             radius=radius,
                             color=color,
-                            popup=popup_text,
+                            popup=folium.Popup(iframe, max_width=450),
                             fill=True).add_to(folium_map)
     folium_map.save('./templates/map1.html')
     return folium_map
