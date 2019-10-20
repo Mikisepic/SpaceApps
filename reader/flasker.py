@@ -9,7 +9,7 @@ def index():
     return render_template('index.html')
 
 # generate a new map
-folium_map = folium.Map(location=[40.738, -73.98],
+folium_map = folium.Map(location=[39.21957070048458, -94.60270442968064],
                         zoom_start=5,
                         tiles="CartoDB dark_matter")
 
@@ -20,10 +20,14 @@ def display_selected_data(aqd, date):
         if str(date) == aqd.DateForecast[i]:
 
             radius = aqd.AQI[i] / 0.0005
-            popup_text = '{}<br> Air Quality: <b>{}</b>'
+            popup_text = '{}<br> Air Quality Depth: <b>{}</b><br> Air Quality: <b>{}</b>'
 
-            if aqd.AQI[i] <= 50:
+            if aqd.AQI[i] <= 30:
                 color = '#34eb5e'
+                condition = 'Very Heathy'
+
+            elif aqd.AQI[i] > 30 and aqd.AQI[i] <= 50:
+                color = '#034efc'
                 condition = 'Good'
 
             elif aqd.AQI[i] > 50 and aqd.AQI[i] <= 100:
@@ -46,7 +50,7 @@ def display_selected_data(aqd, date):
                 color = '#6b0d0d'
                 condition = 'Hazardous'
             
-            popup_text = popup_text.format(aqd.ReportingArea[i], condition)
+            popup_text = popup_text.format(aqd.ReportingArea[i], aqd.AQI[i], condition)
             folium.Circle(location=(aqd.Latitude[i], aqd.Longitude[i]),
                             radius=radius,
                             color=color,
@@ -94,25 +98,26 @@ def plot_quality(aod_Data, selected_region1):
         
         # choose the color of the marker
         if aod_index>0 and aod_index<=0.5:
-            popup_text = "Air Quality: <br><b>Good"
+            popup_text = "Air Quality Index: <b>{}</b> <br><b>Good"
             color="#007849" # green
         elif aod_index>0.5 and aod_index<=1: 
-            popup_text = "Air Quality: <br><b>Moderate"
+            popup_text = "Air Quality Index: <b>{}</b> <br><b>Moderate"
             color="#ffff00" # yellow
         elif aod_index>1 and aod_index<=1.5:
-            popup_text = "Air Quality: <br><b>Unhealthy for Sensitive Groups"
+            popup_text = "Air Quality Index: <b>{}</b> <br><b>Unhealthy for Sensitive Groups"
             color="#ff8000" # orange
         elif aod_index>1.5 and aod_index<=2:
-            popup_text = "Air Quality: <br><b>Unhealthy"
+            popup_text = "Air Quality Index: <b>{}</b> <br><b>Unhealthy"
             color="#ff0000" # red
         elif aod_index>2 and aod_index<=3:
-            popup_text = "Air Quality: <br><b>Very Unhealthy"
+            popup_text = "Air Quality Index: <b>{}</b> <br><b>Very Unhealthy"
             color="#8000ff" # purple
         elif aod_index>3 and aod_index<=5:
-            popup_text = "Air Quality: <br><b>Hazardous"
+            popup_text = "Air Quality Index: <b>{}</b> <br><b>Hazardous"
             color="#800000" # maroon
         
         # add marker to the map
+        popup_text = popup_text.format(aod_index)
         folium.Circle(location=(row["Longitude"],
                             row["Latitude"]),
                             radius=radius,
